@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Global CSS */
+* { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; box-sizing: border-box; font-family: Roboto, 'sans-serif';}
+*:focus { outline: none; }
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.layout {max-width: 1360px; margin: 0 auto; padding-left: 4%; padding-right: 4%; position: relative;}
+h1, .h1 {font-size: 3em; font-weight: 700;}
+h2, .h2 {font-size: 2.75em; font-weight: 700;}
+h3, .h3 {font-size: 2.5em; font-weight: 600;}
+p {padding-bottom: 1.5rem; font-weight: 500;}
+button, .button { padding: 0.75rem 1.5rem; text-decoration: none; text-transform: uppercase; color: #fff; font-weight: 700; border-radius: 8px; cursor: pointer;
+    &__primary {background: rgb(245,172,69); background: linear-gradient(222deg, rgba(245,172,69,1) 0%, rgba(210,79,172,1) 28%, rgba(48,93,202,1) 60%, rgba(20,35,154,1) 100%);}
+}
+
+@media (max-width: 768px) {
+    h1, .h1 {font-size: 2.6em;}
+    h2, .h2 {font-size: 2.35em;}
+    h3, .h3 {font-size: 2.1em;}
+}
+
+/* Main page CSS */
+.intro-main { height: 100%; background: rgb(245,172,69); background: linear-gradient(222deg, rgba(245,172,69,1) 0%, rgba(210,79,172,1) 28%, rgba(48,93,202,1) 60%, rgba(20,35,154,1) 100%); display: flex;
+    .layout {padding-top: max(150px, 12%); min-height: 85vh;}
+    h1, p {color: #fff; position: relative; z-index: 2; padding-bottom: 0;}
+    h1 span {font-size: 1.5em;}
+    p {font-weight: 400; font-size: 1.45em; margin-top: 1em; width: 60%;}
+    img {position: absolute; right: 60px; bottom: 0; width: 40%; }
+}
+.options { background-color: #efefef;
+    .layout {padding-top: 40px; padding-bottom: 40px;}
+    &__cards {display: flex; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    &__card {width: 48%; margin-right: 4%; border-radius: 20px; min-height: 450px; background: rgb(47,91,200); background: linear-gradient(32deg, rgba(47,91,200,1) 0%, rgba(163,83,180,1) 100%); position: relative; border: 7px solid #efefef;
+        >input {width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 2; opacity: 0;}
+        >h3 {color: #fff; text-align: center; padding-top: 1.5rem; text-transform: uppercase;}
+        >img {position: absolute; left: 50%; transform: translateX(-50%); bottom: 2rem; width: auto; height: 60%;}
+        &:nth-of-type(2n) {margin-right: 0;}
+        &:has(input:checked) {transform: scale(1.035); border-color: #22BB33}
+    }
+    &__field { padding: 1.5rem; background: rgb(163,83,180); background: linear-gradient(32deg, rgba(163,83,180,1) 0%, rgba(47,91,200,1) 100%); border-radius: 10px; margin-bottom: 2.5rem;
+        p {padding-bottom: 1rem; color: #fff;}
+        input {display: block; width: 100%; margin-bottom: 0.75rem; padding: 0.5rem 0.75rem; border-radius: 5px;
+            &::placeholder {color: #88898a;}
+            &:last-of-type {margin-bottom: 0;}
+            &[type="file"] {padding: 0;}
+        }
+        .img-preview {margin-top: 1rem;}
+    }
+    .button {font-size: 1.6rem; display: inherit; margin: 0 auto;}
+}
+
+@media (max-width: 980px) {
+    .options {
+        &__card { min-height: 400px;}
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-main { 
+        .layout {padding-top: 60px; min-height: 65vh;}
+        p {width: 100%; font-size: 1.15em;}
+        img {width: 55%;}
+    }
+    .options {
+        &__card { min-height: 350px;
+            >img {height: 50%;}
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .options {
+        &__cards {row-gap: 2.5rem;}
+        &__card { width: 100%; margin-right: 0;}
+    }
+}

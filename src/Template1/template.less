@@ -1,0 +1,202 @@
+/* Custom CSS */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Oswald:wght@300;400;500;700&display=swap');
+.template1 {
+    @blue: #1a2d4e;
+    @pink: #f16b7a;
+    @cream: #fbd1c5;
+
+    &.mob-exp { position: fixed; width: 100%; height: 100%;
+        .shadow {visibility: visible; opacity: 0.8;}
+        .header {
+            .nav-mobile {left: 0; opacity: 1; visibility: visible;}
+            .hamburger {background-image: url(../assets/img/close.svg);}
+        }
+    }
+
+    .blue {color: @blue;}
+    * {font-family: 'Oswald', sans-serif;}
+    h1, .h1, h2, .h2, h3, .h3 {font-family: 'Lilita One', sans-serif; color: @blue;}
+    h2:not(.intro>.layout>h2):not(.tile>h2) {margin-bottom: 1.2em;}
+    h1 span, .h1 span, h2 span, .h2 span {font-family: 'Lilita One', sans-serif;}
+    h1, .h1 {font-size: 3em;}
+    h2, .h2 {font-size: 2.4em; font-weight: 500; text-transform: uppercase;}
+    h3, .h3 {font-size: 2em; font-weight: 600;}
+    button, .button { border-radius: 10px; padding: 0.5em 2em; text-transform: uppercase; border: 3px solid; font-size: 1.05em; display: inline-block; text-decoration: none; cursor: pointer;
+        &.primary {color: #fff; background-color: @blue; border-color: @blue; -webkit-box-shadow: 10px 10px 30px -8px rgba(26,45,78,0.7); -moz-box-shadow: 10px 10px 30px -8px rgba(26,45,78,0.7); box-shadow: 10px 10px 30px -8px rgba(26,45,78,0.7); transition: all 0.2s ease-in-out;
+            &:hover {color: @blue; background-color: #fff; border-color: #fff;}
+        }
+        &.secondary {color: @blue; background-color: #fff; border-color: #fff;}
+    }
+    a {color: @blue; font-weight: 500; text-decoration: none; transition: all 0.15s ease-in-out; cursor: pointer;
+        &:hover {color: @pink;}
+    }
+    ul, ol, p, span {color: @blue;}
+
+    .layout {max-width: 1660px;}
+    .shadow {position: absolute; left: 0; top: 0; z-index: 4; width: 100%; height: 100%; background-color: #000000; transition: all 0.25s ease-in-out; visibility: hidden; opacity: 0;}
+    .email::before, .address::before {content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-45%); width: 15px; height: 15px; background-repeat: no-repeat; background-position: center; background-size: 100%; display: block;}
+
+    .header {position: absolute; top: 0; width: 100%; z-index: 5;
+        .layout {padding-top: 20px; position: relative; display: flex; justify-content: space-between; align-items: center;}
+        .nav {list-style-type: none; display: flex; align-items: center; gap: 2em; float: right;
+            a:not(.button) {color: #fff; padding: 1rem; font-weight: 600;
+                &:hover {color: @blue;}
+            }
+            .button {padding: 0.4em 0.6em;}
+        }
+        .nav-mobile {display: none;}
+        .hamburger {display: none;}
+    }
+    #logo {max-height: 80px; max-width: 140px;
+        img {max-height: 80px;}
+    }
+    .intro {height: 100%; background: rgb(228,96,145); background: linear-gradient(32deg, rgba(228,96,145,1) 0%, rgba(241,135,104,1) 100%);
+        .layout {min-height: 70vh; padding-top: max(120px, 7%);}
+        h1, p {color: #fff; position: relative; z-index: 2; text-shadow: 1px 2px 4px #000000;}
+        h1 { text-transform: uppercase; line-height: 1.25em;
+            span {font-size: 1.5em; color: @blue;}
+        }
+        p {font-weight: 400; font-size: 1.1em; margin: 1em 0 1.2em 0; width: 45%;}
+        img {position: absolute; right: 15%; bottom: 5%; width: 25%; }
+    }   
+    .tiles {height: 100%; position: relative;
+        &::before, &::after {content: ''; position: absolute; width: 50%; height: 100%; bottom: 0; top: 0; z-index: 1;}
+        &::before {left: 0; background-color: #fde6d5;}
+        &::after {right: 0; background-color: #2f4263;}
+        .layout {display: flex; min-height: 30vh; z-index: 2;}
+        &__left {width: 40%;
+            .tile {width: 100%; background: rgb(253,234,216); background: linear-gradient(90deg, rgba(253,234,216,1) 0%, rgba(250,200,189,1) 100%); padding: 2em; padding-left: 0;
+                h2 {color: @pink;}
+                p {color: @blue; padding-bottom: 0;}
+            }
+        }
+        &__right {width: 60%; display: flex;
+            .tile {width: 33.3333%; padding: 1.5em;
+                h3 {margin-bottom: 0.5em;}
+                h3, p {color: @cream; display: block; text-align: center; padding-bottom: 0;}
+                &:first-of-type {background-color: #60708a;}
+                &:nth-of-type(2) {background-color: #435470;}
+                &:nth-of-type(3) {background-color: #2f4263;}
+            }
+        }
+        .tile {height: 100%;}
+    }
+    .services {height: 100%;
+        .layout {padding-top: 2.5rem; padding-bottom: 2.5rem;}
+        h1 {text-transform: uppercase;}
+        &__flex {display: flex;}
+        &__left {width: 46%; margin-right: 8%;}
+        &__right {width: 46%;}
+        ul { list-style-type: none;
+            .title {font-size: 1.35em; font-weight: 600; margin-bottom: 0.25em; display: block;}
+            li { margin-bottom: 3em; padding-left: 6.25em; position: relative;
+                &::before {content: ''; position: absolute; left: 0; top: 5px; height: 64px; width: 64px; background-color: @pink; border-radius: 50%;}
+                &::after {content: ''; position: absolute; left: 17px; top: 23px; height: 28px; width: 28px; background-image: url(../assets/img/check-w.png); background-position: center; background-repeat: no-repeat; background-size: 100%;}
+                p {font-weight: 300; font-size: 0.9em; padding-bottom: 0;}
+                &:last-of-type {margin-bottom: 0;}
+            }
+        }
+    }
+    .pre-footer {background-color: @blue; font-size: 2rem; text-align: center;
+        .layout {padding-top: 1.5rem; padding-bottom: 1.5rem;}
+        p {padding-bottom: 0; color: #fff;}
+        
+    }
+    .footer { background: rgb(228,96,145); background: linear-gradient(32deg, rgba(228,96,145,1) 0%, rgba(241,135,104,1) 100%);
+        .columns { display: flex; gap: 3rem; padding-top: 2.5rem; padding-bottom: 2.5rem; margin-bottom: 1rem;
+            .col {width: 26.6%;
+                &:first-of-type {width: 20%;}
+                &:last-of-type a {padding-left: 2rem; position: relative;}
+                p {color: #fff; padding-bottom: 0; font-weight: 300;}
+            }
+        }
+        ul, ol {list-style-type: none;
+            a {display: inline-block; color: #fff;
+                &:hover {color: @blue;}
+            }
+        }
+        .logo {max-height: 80px; max-width: 140px;
+            img {max-height: 80px;}
+        }
+        .email::before {background-image: url(../assets/img/env-b.png);}
+        .address::before {background-image: url(../assets/img/phone-b.png);}
+        .copyright {text-align: center; padding-top: 1em; padding-bottom: 1em; border-top: 1px solid #ffffffab;
+            p {color: #fff; padding-bottom: 0;}
+        }
+    }
+    .footer {
+        &::before {display: block; content: ''; position: absolute;}
+
+    }
+
+    @media (max-width: 980px) {
+        .tiles {
+            p {font-size: 0.9em;}
+            &::after, &::before {display: none;}
+            .layout {flex-direction: column; min-height: unset;}
+            &__left {width: 100%; position: relative;
+                &::before {position: absolute; content: ''; width: 108.6%; height: 100%; left: 50%; transform: translateX(-50%); display: block; z-index: 1; background: rgb(253,234,216); background: linear-gradient(90deg, rgba(253,234,216,1) 0%, rgba(250,200,189,1) 100%);}
+                .tile {padding-right: 0; z-index: 2; position: relative;}
+            }
+            &__right {width: 100%; position: relative;
+                &::before {position: absolute; content: ''; width: 108.6%; height: 100%; left: 50%; transform: translateX(-50%); display: block; z-index: 1; background: rgb(96,112,138); background: linear-gradient(90deg, rgba(96,112,138,1) 0%, rgba(96,112,138,1) 10%, rgba(47,66,99,1) 90%, rgba(47,66,99,1) 100%);}
+                .tile {position: relative; z-index: 2;}
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        h1, .h1 {font-size: 2.7em;}
+        h2, .h2 {font-size: 2.3em;}
+        h3, .h3 {font-size: 1.75em;}
+        .header {
+            .nav {display: none;}
+            .nav-mobile {display: block; position: absolute; left: 0; top: 0; width: 100%; padding: 1.5rem; list-style-type: none; background-color: @blue; text-align: center; z-index: 2; transition: all 0.25s ease-in-out; visibility: hidden; opacity: 0;
+                a:not(.button) {display: block; color: #fff; padding: 0.5rem 0;}
+                .email, .address {position: absolute; display: inline-block; left: 1.5rem; font-weight: 400; padding-left: 1.5rem !important;}
+                .email {top: 1.5rem;
+                    &::before {background-image: url(../assets/img/env-w.png);}
+                }
+                .address {top: 3.5rem;
+                    &::before {background-image: url(../assets/img/phone-w.png);}
+                }
+                ul { padding-top: 4.25rem;
+                    li:last-of-type {margin-top: 1rem;}
+                }
+            }
+            .hamburger {display: block; z-index: 3; width: 42px; height: 42px; background-image: url(../assets/img/hamburger.svg); background-repeat: no-repeat; background-position: center; background-size: 100%; filter: invert(1); cursor: pointer; position: relative;}  
+        }
+        .intro {
+            .layout {min-height: 65vh; padding-bottom: 1rem;}
+            p {width: 100%;}
+            img {width: 35%;}
+        }
+        .services {
+            &__flex {flex-direction: column;}
+            &__left {width: 100%; margin-right: 0; margin-bottom: 3em;}
+            &__right {width: 100%;}
+        }
+        .footer {
+            .columns { flex-wrap: wrap; row-gap: 2em; column-gap: 0;
+                .col {width: 48% !important; margin-right: 4% !important;
+                    &:nth-of-type(2n) {margin-right: 0 !important;}
+                }
+            }
+        }
+    }
+
+    @media (max-width: 580px) {
+        .tiles {
+            &__right {flex-direction: column;
+                &::before {display: none;}
+                .tile {width: 100%;
+                    >h3, >p {position: relative; z-index: 2;}
+                    &::before {position: absolute; content: ''; width: 108.6%; height: 100%; left: 50%; transform: translateX(-50%); top: 0; display: block; z-index: 1;}
+                    &:first-of-type::before {background: #60708a;}
+                    &:nth-of-type(2)::before {background: #435470;}
+                    &:last-of-type::before {background: #2f4263;}
+                }
+            }
+        }
+    }
+}
