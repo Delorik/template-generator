@@ -1,4 +1,4 @@
-import introImg from './../assets/img/template1-intro.png';
+import introImg from './../assets/img/template1/intro.png';
 
 const Intro = () => {
     return (

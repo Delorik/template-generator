@@ -34,7 +34,7 @@ const Services = () => {
 
     for (let i = 0; i < 12; i++) {
         renderedServices.push(
-            <div class="services__slide" key={i}>
+            <div className="services__slide" key={i}>
                 <span className="title">{service[0].title}</span>
                 <p>{service[0].content}</p>
             </div>
