@@ -21,5 +21,7 @@ Veškeré psané texty v aplikaci (včetně komendářů v kódu) jsou v anglick
 ****** Setup ******
 
 Projekt běží na LTS node.js verzi (currently 18.7.1.).
+Pro stažení projektu je zapotřebí mít nainstalovaný GIT, dále lze repozitář stáhnout do libovolné složky příkazem 'git clone https://github.com/Delorik/template-generator.git'
 Informace o všech závislostech, které je potřeba před spuštěním nainstalovat jsou k dosažení v souboru "package-lock.json". Tyto knihovny nainstalujete pomocí příkazů 'npm install --name', kdy proměnná 'name' představuje název dané knihovny/závislosti. Např. 'npm install --jquery'.
+Všechny závislosti je možné nainstalovat příkazem 'npm install'.
 Následně je projekt připraven ke spuštění příkazem 'npm run dev'.

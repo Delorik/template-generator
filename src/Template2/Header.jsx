@@ -5,7 +5,6 @@ const Header = ({logoUrl, email, address}) => {
     useEffect(() => {
         const burger = $('.hamburger');
         burger.on('click', function(e) {
-            console.log('klik');
             if (!$('body').is('.mob-exp')) {
                 $('body').addClass('mob-exp');
             } else {
